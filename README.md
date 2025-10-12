@@ -30,7 +30,7 @@ A docker container that uses the Unifi PoE Control Script by @wearelucid to set 
  
 ## Usage
 
-Create a Unifi Admin account with a "Full Management" role of the network (uncheck "Use a Predefined Role" and select "None" for all other options available) that will specifically only be used for PoE control that is **$$\color{red}\text{Restricted to Local Access Only}$$**. This info is what you will enter into the `unifi_username.txt` and `unifi_password.txt` files. Create this account from the local management portal **NOT** from the Unifi cloud portal.
+Create a Unifi Admin account with a "Full Management" role of the network (uncheck "Use a Predefined Role" and select "None" for all other options available) that will specifically only be used for PoE control that is **$$\color{red}\text{Restricted to Local Access Only}$$**. This info is what you will enter into the `unifi_username.txt` and `unifi_password.txt` files. Create this account from the local management portal **NOT** from the Unifi cloud portal. You will also need to acquire your PoE switch's MAC address.
 
 <img width="346" height="469" alt="Unifi Admin example (Large)" src="https://github.com/user-attachments/assets/ae0322ea-f53e-4e83-be83-007bfee35d0f" />
 
