@@ -50,7 +50,7 @@ You will need a local user created in your UniFi OS Console to log in with. Ubiq
 ### Basic Syntax
 
 ```bash
-python unifi_poe_toggle.py <controller_host> <username> <password> <switch_mac> <port_indexes> --state <on|off> [options]
+python unifi_poe_control.py <controller_host> <username> <password> <switch_mac> <port_indexes> --state <on|off> [options]
 ```
 
 ### Arguments
@@ -89,7 +89,7 @@ The script supports flexible port specification:
 Enable PoE on ports 1, 2, and 3:
 
 ```bash
-python unifi_poe_toggle.py 192.168.1.1 admin mypassword 00:11:22:33:44:55 1,2,3 --state on
+python unifi_poe_control.py 192.168.1.1 admin mypassword 00:11:22:33:44:55 1,2,3 --state on
 ```
 
 ### Basic Usage - Disable PoE
@@ -97,7 +97,7 @@ python unifi_poe_toggle.py 192.168.1.1 admin mypassword 00:11:22:33:44:55 1,2,3 
 Disable PoE on ports 1, 2, and 3:
 
 ```bash
-python unifi_poe_toggle.py 192.168.1.1 admin mypassword 00:11:22:33:44:55 1,2,3 --state off
+python unifi_poe_control.py 192.168.1.1 admin mypassword 00:11:22:33:44:55 1,2,3 --state off
 ```
 
 ### Range of Ports
@@ -105,7 +105,7 @@ python unifi_poe_toggle.py 192.168.1.1 admin mypassword 00:11:22:33:44:55 1,2,3 
 Enable PoE on ports 1 through 8:
 
 ```bash
-python unifi_poe_toggle.py 192.168.1.1 admin mypassword 00:11:22:33:44:55 1-8 --state on
+python unifi_poe_control.py 192.168.1.1 admin mypassword 00:11:22:33:44:55 1-8 --state on
 ```
 
 ### Custom Controller Port
@@ -113,7 +113,7 @@ python unifi_poe_toggle.py 192.168.1.1 admin mypassword 00:11:22:33:44:55 1-8 --
 For a controller on a non-standard port (like UniFi OS on port 443):
 
 ```bash
-python unifi_poe_toggle.py 192.168.1.1 admin mypassword 00:11:22:33:44:55 5,10-12 --state off --port 443
+python unifi_poe_control.py 192.168.1.1 admin mypassword 00:11:22:33:44:55 5,10-12 --state off --port 443
 ```
 
 ### Multiple Sites
@@ -121,7 +121,7 @@ python unifi_poe_toggle.py 192.168.1.1 admin mypassword 00:11:22:33:44:55 5,10-1
 For a specific site (not the default):
 
 ```bash
-python unifi_poe_toggle.py unifi.local admin mypassword aa:bb:cc:dd:ee:ff 1-24 --state on --site branch-office
+python unifi_poe_control.py unifi.local admin mypassword aa:bb:cc:dd:ee:ff 1-24 --state on --site branch-office
 ```
 
 ### Debug Mode
@@ -129,7 +129,7 @@ python unifi_poe_toggle.py unifi.local admin mypassword aa:bb:cc:dd:ee:ff 1-24 -
 Enable detailed logging for troubleshooting:
 
 ```bash
-python unifi_poe_toggle.py 192.168.1.1 admin mypassword 00:11:22:33:44:55 1,2,3 --state on --debug
+python unifi_poe_control.py 192.168.1.1 admin mypassword 00:11:22:33:44:55 1,2,3 --state on --debug
 ```
 
 ### Automation Mode
@@ -138,7 +138,7 @@ Skip confirmation prompts for scripting and automation:
 
 ```bash
 # For scripts and automation - no user interaction required
-python unifi_poe_toggle.py 192.168.1.1 admin mypassword 00:11:22:33:44:55 1,2,3 --state off --yes
+python unifi_poe_control.py 192.168.1.1 admin mypassword 00:11:22:33:44:55 1,2,3 --state off --yes
 ```
 
 ## PoE Modes
