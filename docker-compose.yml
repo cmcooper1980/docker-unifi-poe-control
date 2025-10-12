@@ -1,0 +1,22 @@
+services:
+  unifi-poe-control:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: unifi-poe-control
+    restart: unless-stopped
+    secrets:
+      - unifi_username
+      - unifi_password
+    env_file:
+      - .env
+
+secrets:
+  unifi_username:
+    file: ./unifi_username.txt
+  unifi_password:
+    file: ./unifi_password.txt
+
+# If secrets not used, referenced username and password explicitly entered
+# in the .env file will output to logs and console (great for debug but
+# not for production)
