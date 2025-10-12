@@ -143,7 +143,7 @@ services:
       # Cron heartbeat / diagnostics
       # Adds a once-per-minute date job for debugging (keeps log “alive”)
       # default is 0 or comment out to avoid filling log.
-      DIAG_CRON=0
+      - DIAG_CRON=0
 ```
 
 3) Run
