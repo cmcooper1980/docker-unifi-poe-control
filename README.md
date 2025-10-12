@@ -8,7 +8,7 @@ A docker container that uses the Unifi PoE Control Script by @wearelucid to set 
 
 - Docker
 - Docker Compose
-- Unifi Network Controller (test with 9.5.18)
+- Unifi Network Controller (tested with 9.5.18)
 
 ## How it works
 
