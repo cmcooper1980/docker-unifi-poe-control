@@ -1,0 +1,19 @@
+# Prevent secrets from being baked into the image
+unifi_username.txt
+unifi_password.txt
+.env
+
+# Prevent local and VCS files
+.git
+.gitignore
+README.md
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs and temporary files
+*.log
+.DS_Store
