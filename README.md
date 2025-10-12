@@ -160,7 +160,7 @@ services:
 - You can use either `on`|`enable` (maps to PoE “auto”) and `off`|`disable` (maps to PoE “off”).
 
  
-########################################################################################################
+#############################################################################
  
 
 # UniFi PoE Control Script (use script directly)
