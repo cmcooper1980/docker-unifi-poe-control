@@ -79,6 +79,7 @@ secrets:
 services:
   unifi-poe-control:
     image: cmcooper1980/docker-unifi-poe-control:latest
+    container_name: unifi-poe-control
     restart: unless-stopped
     secrets:
       - unifi_username
