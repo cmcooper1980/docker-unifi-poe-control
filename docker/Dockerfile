@@ -21,15 +21,9 @@ RUN python -m pip install --upgrade pip \
  && pip install --no-cache-dir -r requirements.txt
 
 # --- Health check ---
-# Checks that cron is alive and the container is responsive.
-# It passes if the cron log has been updated within the last 10 minutes.
-HEALTHCHECK --interval=2m --timeout=30s --start-period=1m --retries=3 \
-  CMD if [ -f /var/log/cron.log ] && \
-         find /var/log/cron.log -mmin -10 | grep -q cron.log; then \
-        echo "Cron log updated recently"; exit 0; \
-      else \
-        echo "Cron appears idle or not writing logs"; exit 1; \
-      fi
+# Passes if cron daemon is running and cron jobs file exists
+HEALTHCHECK --interval=2m --timeout=20s --start-period=1m --retries=3 \
+  CMD pgrep -x cron >/dev/null && [ -s /etc/cron.d/unifi-poe ] || exit 1
 
 # Entrypoint
 COPY ./docker/entrypoint.sh /app/
