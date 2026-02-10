@@ -87,12 +87,15 @@ services:
       - unifi_password
 #    env_file:
 #      - .env
-# Uncomment the above two lines and delete this line and everything below if using the .env file from the repo
+# Uncomment the above two lines and delete this line and everything below if using the .env file from
+# the repo
     environment:
       # ---- Base (required) ----
       - CONTROLLER_HOST=xxx.xxx.xxx.xxx #Unifi Controller IP Address
-      #- USERNAME=username   # Unifi Admin account with Full Management role, only use to debug (will print to log/console)
-      #- PASSWORD=password   # Unifi Admin account password, only use to debug (will print to log/console)
+      # Credentials below are for the Unifi Admin account with Full Management role, only uncomment to
+      # debug as it will print to the log/console.
+      #- USERNAME=username
+      #- PASSWORD=password
       - SWITCH_MAC=xx:xx:xx:xx:xx:xx   # MAC address of Unifi PoE Switch to control
       - TZ=America/Chicago   # system TZ
       #- CRON_TZ=America/Chicago   # cron TZ (overrides TZ for accurate cronjob schedules)
@@ -101,7 +104,8 @@ services:
       - PORT_INDEXES=1,2,3
 
       # ---- Options (map 1:1 to script flags) ----
-      # STATE is mandatory in RUN-ONCE mode; not needed when using cron jobs (each job defines its own)
+      # STATE is mandatory in RUN-ONCE mode; not needed when using cron jobs (each job defines
+      #  its own)
       - STATE=enable           # on|off|enable|disable
       - PORT=443            # Controller port
       - SITE=default        # Site name
@@ -111,12 +115,15 @@ services:
       
       # ---- Scheduler mode ----
       # If CRON_MODE=0, RUN-ONCE mode, container runs command using default STATE value above.
-      # If CRON_MODE=1, the container installs cron jobs and stays running with cron in foreground; ignores RUN_ONCE.
+      # If CRON_MODE=1, the container installs cron jobs and stays running with cron in foreground;
+      #  ignores RUN_ONCE.
       - CRON_MODE=0
 
       # RUN_ONCE_MODE options:
-      # idle (default mode, action will RUN ONCE and container remain idle until whenever container is restarted or rebuilt)
-      # skip-if-done (action will RUN ONCE and create a marker; if marker is detected, will not perform RUN_ONCE if host or container is restarted but will with a rebuild)
+      # idle (default mode, action will RUN ONCE and container remain idle until whenever container is
+      #  restarted or rebuilt)
+      # skip-if-done (action will RUN ONCE and create a marker; if marker is detected, will not perform
+      #  RUN_ONCE if host or container is restarted but will with a rebuild)
       # exit (restart mode must be set to 'no', container will RUN ONCE then exit)
       - RUN_ONCE_MODE=idle
 
