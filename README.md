@@ -93,7 +93,7 @@ services:
       # ---- Base (required) ----
       - CONTROLLER_HOST=xxx.xxx.xxx.xxx #Unifi Controller IP Address
       # Credentials below are for the Unifi Admin account with Full Management role, only uncomment to
-      # debug as it will print to the log/console.
+      #  debug as it will print to the log/console.
       #- USERNAME=username
       #- PASSWORD=password
       - SWITCH_MAC=xx:xx:xx:xx:xx:xx   # MAC address of Unifi PoE Switch to control
